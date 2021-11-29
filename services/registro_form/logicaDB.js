@@ -6,11 +6,23 @@ const crearRegistroFormDB = async (registroForm_crear) => {
 }
 
 const obtenerRegistroFormsDB = async () => {
-    let respuesta = await RegistroForms.find();
+    let respuesta = await RegistroForms.find().sort({ _id: -1 });
     return respuesta 
-} 
+}
+
+const eliminarRegistroFormsDB = async (_id) => {
+    let respuesta = await RegistroForms.deleteOne({_id});
+    return respuesta;
+}
+
+const eliminarTodoRegistroFormsDB = async () => {
+    let respuesta = await RegistroForms.deleteMany({});
+    return respuesta;
+}
 
 module.exports = {
     crearRegistroFormDB,
     obtenerRegistroFormsDB,
+    eliminarRegistroFormsDB,
+    eliminarTodoRegistroFormsDB
 }
