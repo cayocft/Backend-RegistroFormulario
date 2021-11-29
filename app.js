@@ -10,10 +10,10 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
 /** RUTAS */
 
-const registroForm = require('./router/registroForm')
-
-api.use('/registroForm',registroForm)
-
+const registroForm = require('./router/registroForm');
+const usuario = require('./router/usuario');
+api.use('/registroForm',registroForm);
+api.use('/usuario',usuario);
 app.use(process.env.PREFIJO, api)
 /** CONEXION MONGO */
 const mongoose = require('mongoose')

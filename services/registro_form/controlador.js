@@ -1,4 +1,4 @@
-const { crearRegistroFormDB, obtenerRegistroFormsDB } = require('./logicaDB')
+const { crearRegistroFormDB, obtenerRegistroFormsDB, eliminarRegistroFormsDB, eliminarTodoRegistroFormsDB } = require('./logicaDB')
 
 const crearRegistroForm = async (req,res)=> {
     let registroForm = req.body
@@ -25,7 +25,49 @@ const obtenerRegistroForms = async (req,res) => {
     }
 }
 
+const eliminarRegistroForms = async (req,res) => {
+    let id_registroForms = req.params.id_registroForms;
+    console.log(id_registroForms)
+    try {
+        let respuesta = await eliminarRegistroFormsDB(id_registroForms);
+        if(respuesta.deletedCount == 0){
+            return res.status(200).json({
+                'registroForms': 'registro no existe o ya fué eliminado'
+            });
+        }else{
+            return res.status(200).json({
+                'registroForms': respuesta
+            });
+        }
+        
+    } catch(error){
+        return res.status(500).json({ error }); 
+    }
+}
+
+const eliminarTodoRegistroForms = async (req,res) => {
+    try {
+        let respuesta = await eliminarTodoRegistroFormsDB();
+        
+        if(respuesta.deletedCount == 0){
+            return res.status(200).json({
+                'registroForms': 'La base de datos ya esta vacia'
+            });
+        }else{
+            return res.status(200).json({
+                'registroForms': respuesta
+            });
+        }
+        
+        
+    } catch(error){
+        return res.status(500).json({ error }); 
+    }
+}
+
 module.exports = { 
     crearRegistroForm,
-    obtenerRegistroForms
+    obtenerRegistroForms,
+    eliminarRegistroForms,
+    eliminarTodoRegistroForms
 }
