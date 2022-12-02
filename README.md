@@ -6,8 +6,16 @@
 ## Servicios 
 
 ### 1- Datos del Servidor
-    Servidor: https://backend-registro-formulario.herokuapp.com/
+    Servidor: https://api-backend-prueba.edgardocayo.cl/
     PREFIJO: api-backend-prueba
+    
+###NOTA
+
+```
+Si da error de cors, ERR Certificado... Quitar la "s" al https. Quedando:
+Servidor: http://api-backend-prueba.edgardocayo.cl/
+PREFIJO: api-backend-prueba
+```
 
 ### 2- Registro formulario
 
