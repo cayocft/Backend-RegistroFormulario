@@ -6,7 +6,7 @@
 ## Servicios 
 
 ### 1- Datos del Servidor
-    Servidor: https://api-backend-prueba.edgardocayo.cl/
+    Servidor: https://backend-dos-campos-cft.koyeb.app/
     PREFIJO: api-backend-prueba
     
 ###NOTA
