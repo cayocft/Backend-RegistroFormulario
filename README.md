@@ -183,7 +183,7 @@ PREFIJO: api-backend-prueba
         },
 
 ### 8- Eliminar Usuario
-### Ruta: /registroForm
+### Ruta: /usuario
     Methodo DELETE - Ruta: /eliminar-usuario/:id_usuario
 
 ### Ejemplo: /registroForm
@@ -213,7 +213,7 @@ PREFIJO: api-backend-prueba
         }
 
 ### 9- Eliminar Todos Los Usuarios
-### Ruta: /registroForm
+### Ruta: /usuario
     Methodo DELETE - Ruta: /eliminar-todo-registro
 >#### No recibe datos
 >#### Respuesta del servidor
