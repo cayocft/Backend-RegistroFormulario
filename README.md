@@ -6,8 +6,8 @@
 ## Servicios 
 
 ### 1- Datos del Servidor
-    Servidor: https://backend-dos-campos-cft.koyeb.app/
-    PREFIJO: api-backend-prueba
+    Servidor: https://backend-registroformulario.onrender.com
+    PREFIJO: /api-backend-prueba
     
 ###NOTA
 
