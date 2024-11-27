@@ -2,6 +2,9 @@
 # Indice
 ## 1 Datos del Servidor
 ## 2 Registro Formulario
+## 3 Usuarios
+## 4 Profesionales Servicio Técnico
+## 5 Solicitud Formulario 
 -----
 ## Servicios 
 
@@ -9,7 +12,7 @@
     Servidor: https://backend-registroformulario.onrender.com
     PREFIJO: /api-backend-prueba
     
-###NOTA
+### NOTA
 
 ```
 Si da error de cors, ERR Certificado... Quitar la "s" al https. Quedando:
@@ -37,7 +40,7 @@ PREFIJO: api-backend-prueba
                 "__v": 0
             }
         }
-### 3- Obtener Registros
+### Obtener Registros
 ### Ruta: /registroForm
     Metodo GET - Ruta: /obtener-registros
 >#### Datos Obtenidos
@@ -59,7 +62,7 @@ PREFIJO: api-backend-prueba
         ]
     }
 
-### 4- Eliminar Datos del Registrado por ID
+### Eliminar Datos del Registrado por ID
 ### Ruta: /registroForm
     Methodo DELETE - Ruta: /eliminar-registro/:id_registroForms
 >#### Datos recibidos por URL
@@ -96,7 +99,7 @@ PREFIJO: api-backend-prueba
     (500)
     {error()}
 
-### 5- Eliminar Todos Los Datos registrado
+### Eliminar Todos Los Datos registrado
 ### Ruta: /registroForm
     Methodo DELETE - Ruta: /eliminar-todo-registro
 >#### No recibe datos
@@ -133,8 +136,9 @@ PREFIJO: api-backend-prueba
     (500)
         {error()}
 
-### 6- Crear Usuario
+### 4- Usuarios 
 ### Ruta: /usuario
+>#### Registrar Usuario
     Methodo POST - Ruta: /crear-usuario
 ### Datos recibidos
     
@@ -154,7 +158,7 @@ PREFIJO: api-backend-prueba
         "password": "$2b$10$nQ0pr4Yrjpqx6q5gZ3l/K.fnN7MtNm/2jhh4y22GlDr1SuVzh/KsO",
         "__v": 0
     }
-### 7- Obtener Usuarios
+### Obtener Usuarios
 ### Ruta: /usuario
     Methodo GET - Ruta: /obtener-usuarios
 
@@ -182,7 +186,7 @@ PREFIJO: api-backend-prueba
             "__v": 0
         },
 
-### 8- Eliminar Usuario
+### Eliminar Usuario
 ### Ruta: /registroForm
     Methodo DELETE - Ruta: /eliminar-usuario/:id_usuario
 
@@ -212,7 +216,7 @@ PREFIJO: api-backend-prueba
             "deletedCount": 1
         }
 
-### 9- Eliminar Todos Los Usuarios
+### Eliminar Todos Los Usuarios
 ### Ruta: /registroForm
     Methodo DELETE - Ruta: /eliminar-todo-registro
 >#### No recibe datos
@@ -236,3 +240,66 @@ PREFIJO: api-backend-prueba
             "operationTime": "7035780300617547864",
             "deletedCount": 75
         }
+
+### 4- Profesionales Servicio Técnico
+
+### Ruta: /profesional
+>#### Registrar Datos del Profesional
+    Methodo POST - Ruta: /crear-profesional
+>#### Datos recibidos (JSON)
+    
+    "profesional": {
+        "nombre":"Benito",
+        "apellido":"LOpez",
+        "correo":"benito@gmail.com",
+        "profesión":"Inofrmatico PC",
+        "telefono":"8765787778"
+    }
+
+>#### Respuesta
+    (200)
+        {
+            "profesional": {
+                "_id": "67472f49e8003c0dbb1e297a",
+                "nombre": "Benito",
+                "apellido": "LOpez",
+                "correo": "benito@gmail.com",
+                "telefono": "8765787778",
+                "__v": 0
+            }
+        }
+
+### Obtener Profesionales
+### Ruta: /profesional
+    Metodo GET - Ruta: /obtener-profesionales
+
+>#### Respuesta
+    (200)
+    {
+        "profesionales": [
+            {
+                "_id": "67472f49e8003c0dbb1e297a",
+                "nombre": "Benito",
+                "apellido": "LOpez",
+                "correo": "benito@gmail.com",
+                "telefono": "8765787778",
+                "__v": 0
+            },
+            {
+                "_id": "674716cd5a17930bd9841679",
+                "nombre": "Benito",
+                "apellido": "LOpez",
+                "correo": "benito@gmail.com",
+                "telefono": "8765787778",
+                "__v": 0
+            },
+            {
+                "_id": "673e782a4ed80a0a319f71ab",
+                "nombre": "Juanito",
+                "apellido": "marambio",
+                "correo": "juanito@gmail.com",
+                "telefono": "8765787778",
+                "__v": 0
+            }
+        ]
+    }
