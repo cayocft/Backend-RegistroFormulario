@@ -1,0 +1,25 @@
+### Crear Profesional
+POST http://localhost:3000/api-backend-prueba/profesional/crear-profesional
+Content-Type: application/json
+# Este es el Bady para crear un Servicio tecnico
+
+{ 
+    //Este es el Contenido estructurado
+    "profesional": {
+        "nombre":"Benito",
+        "apellido":"LOpez",
+        "correo":"benito@gmail.com",
+        "profesión":"Inofrmatico PC",
+        "telefono":"8765787778"
+    }
+}
+
+###Obtener Todos los profesionales registrados
+GET http://localhost:3000/api-backend-prueba/profesional/obtener-profesionales
+
+###Obtener Profesional por ID
+GET http://localhost:3000/api-backend-prueba/profesional/obtener-profesional-por-id/674716cd5a17930bd9841679
+
+### Eliminar Profesional por ID
+
+DELETE http://localhost:3000/api-backend-prueba/profesional/eliminar-profesional-por-id/6747aaed29c3a21044687fc4

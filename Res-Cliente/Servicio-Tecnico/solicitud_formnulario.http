@@ -1,0 +1,25 @@
+### Crear Solicitud Formulario
+POST http://localhost:3000/api-backend-prueba/solicitud-formulario/crear-solicitud-formulario
+Content-Type: application/json
+# Este es el Bady para crear un Servicio tecnico
+
+{ 
+    //Este es el Contenido estructurado
+    "solicitud_formulario": {
+        "nombre":"Laura",
+        "apellido":"Bose",
+        "correo":"laura@gmail.com",
+        "telefono":"+56 9 222323233",
+        "mensaje":"Probando formulario correctamente"
+    }
+}
+
+###Obtener Todas las Solicitudes por Formulario registradas
+GET http://localhost:3000/api-backend-prueba/solicitud-formulario/obtener-solicitudes-formulario
+
+###Obtener Profesional por ID
+GET http://localhost:3000/api-backend-prueba/solicitud-formulario/obtener-solicitud-formulario-por-id/67472720e8003c0dbb1e2979
+
+### Eliminar Profesional por ID
+DELETE http://localhost:3000/api-backend-prueba/solicitud-formulario/eliminar-solicitud-formulario-por-id/67472720e8003c0dbb1e2979
+
