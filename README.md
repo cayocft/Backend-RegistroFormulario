@@ -303,3 +303,182 @@ PREFIJO: api-backend-prueba
             }
         ]
     }
+
+### Obtener Profesional por ID
+### Ruta: /profesional
+    Methodo GET - Ruta: /obtener-profesional-por-id/:id_profesional
+
+### Ejemplo: /profesional
+    /profesional/obtener-profesional-por-id/674716cd5a17930bd9841679
+
+### Datos recibidos por URL
+    id_profesional
+
+### Respuesta
+    (200)
+    {
+        "profesional": {
+            "_id": "674716cd5a17930bd9841679",
+            "nombre": "Benito",
+            "apellido": "LOpez",
+            "correo": "benito@gmail.com",
+            "telefono": "8765787778",
+            "__v": 0
+        }
+    }
+
+### Eliminar Profesional por ID
+### Ruta: /profesional
+    Methodo GET - Ruta: /eliminar-profesional-por-id/:id_profesional
+
+### Ejemplo: /profesional
+    /profesional/eliminar-profesional-por-id/673e78da97e0d10acd129c7b
+
+### Datos recibidos por URL
+    id_profesional
+
+### Respuesta
+    (200)
+    {
+        "profesional": {
+                "n": 1,
+                "electionId": "7fffffff000000000000024c",
+                "opTime": {
+                "ts": "7442104899971579933",
+                "t": 588
+            },
+            "ok": 1,
+            "$clusterTime": {
+                "clusterTime": "7442104899971579933",
+                "signature": {
+                    "hash": "vLiXCWobqqk9GOAei8nLjo3OE9o=",
+                    "keyId": "7394796307652542503"
+                }
+            },
+            "operationTime": "7442104899971579933",
+            "deletedCount": 1
+        }
+    }
+
+### 5- Solicitud Formulario
+
+### Ruta: /solicitud-formulario
+>#### Registrar Datos del Profesional
+    Methodo POST - Ruta: /crear-solicitud-formulario
+>#### Datos recibidos (JSON)
+    "solicitud_formulario": {
+        "nombre":"Laura",
+        "apellido":"Bose",
+        "correo":"laura@gmail.com",
+        "telefono":"+56 9 222323233",
+        "mensaje":"Probando formulario correctamente"
+    }
+>### Respuesta
+
+    (200)
+    {
+        "solicitud_formulario": {
+            "_id": "6747b14929c3a21044687fc5",
+            "nombre": "Laura",
+            "apellido": "Bose",
+            "correo": "laura@gmail.com",
+            "telefono": "+56 9 222323233",
+            "mensaje": "Probando formulario correctamente",
+            "__v": 0
+        }
+    }
+
+### Obtener Solicitudes Formulario
+### Ruta: /solicitud-formulario
+    Metodo GET - Ruta: /obtener-solicitudes-formulario
+
+>#### Respuesta
+    (200)
+    {
+        "solicitud_formulario": [
+            {
+                "_id": "6747b14929c3a21044687fc5",
+                "nombre": "Laura",
+                "apellido": "Bose",
+                "correo": "laura@gmail.com",
+                "telefono": "+56 9 222323233",
+                "mensaje": "Probando formulario correctamente",
+                "__v": 0
+            },
+            {
+                "_id": "67472720e8003c0dbb1e2979",
+                "nombre": "Laura",
+                "apellido": "Bose",
+                "correo": "laura@gmail.com",
+                "telefono": "+56 9 222323233",
+                "mensaje": "Probando formulario correctamente",
+                "__v": 0
+            },
+            {
+                "_id": "674725bae8003c0dbb1e2977",
+                "nombre": "Benito",
+                "apellido": "LOpez",
+                "correo": "benito@gmail.com",
+                "telefono": "+56 9 63222222",
+                "mensaje": "Probando formulario correctamente",
+                "__v": 0
+            }
+        ]
+    }
+
+### Obtener Solicitud Formulario por ID
+### Ruta: /solicitud-formulario
+    Methodo GET - Ruta: /obtener-solicitud-formulario-por-id/:id_solicitud_formulario
+
+### Ejemplo: /solicitud-formulario
+    /solicitud-formulario/obtener-solicitud-formulario-por-id/674725bae8003c0dbb1e2977
+
+### Datos recibidos por URL
+    id_solicitud_formulario
+
+### Respuesta
+    (200)
+    {
+        "solicitud_formulario": {
+            "_id": "67472720e8003c0dbb1e2979",
+            "nombre": "Laura",
+            "apellido": "Bose",
+            "correo": "laura@gmail.com",
+            "telefono": "+56 9 222323233",
+            "mensaje": "Probando formulario correctamente",
+            "__v": 0
+        }
+    }
+
+### Eliminar Solicitud Formulario por ID
+### Ruta: /solicitud-formulario
+    Methodo GET - Ruta: /eliminar-solicitud-formulario-por-id/:id_solicitud_formulario
+
+### Ejemplo: /solicitud-formulario
+    /solicitud-formulario/eliminar-solicitud-formulario-por-id/67472720e8003c0dbb1e2979
+
+### Datos recibidos por URL
+    id_solicitud_formulario
+
+### Respuesta
+    (200)
+    {
+        "profesional": {
+            "n": 1,
+            "electionId": "7fffffff000000000000024c",
+            "opTime": {
+            "ts": "7442120881544888354",
+            "t": 588
+            },
+            "ok": 1,
+            "$clusterTime": {
+                "clusterTime": "7442120881544888354",
+                "signature": {
+                    "hash": "sk6hpa9X9jji6lqLoK93rJUveKo=",
+                    "keyId": "7394796307652542503"
+                }
+            },
+            "operationTime": "7442120881544888354",
+            "deletedCount": 1
+        }
+    }
