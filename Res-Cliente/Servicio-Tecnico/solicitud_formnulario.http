@@ -21,5 +21,5 @@ GET http://localhost:3000/api-backend-prueba/solicitud-formulario/obtener-solici
 GET http://localhost:3000/api-backend-prueba/solicitud-formulario/obtener-solicitud-formulario-por-id/67472720e8003c0dbb1e2979
 
 ### Eliminar Profesional por ID
-DELETE http://localhost:3000/api-backend-prueba/solicitud-formulario/eliminar-solicitud-formulario-por-id/67472625e8003c0dbb1e2978
+DELETE http://localhost:3000/api-backend-prueba/solicitud-formulario/eliminar-solicitud-formulario-por-id/67472720e8003c0dbb1e2979
 
