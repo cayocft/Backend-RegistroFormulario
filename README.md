@@ -30,7 +30,7 @@ PREFIJO: api-backend-prueba
     campo1: "valor del campo"
     campo2: "valor del campo"
     
->#### Respuesta
+>#### Respuesta del servidor
     (200)
         {
             "registro": {
@@ -256,7 +256,7 @@ PREFIJO: api-backend-prueba
         "telefono":"8765787778"
     }
 
->#### Respuesta
+>#### Respuesta del servidor
     (200)
         {
             "profesional": {
@@ -314,7 +314,7 @@ PREFIJO: api-backend-prueba
 ### Datos recibidos por URL
     id_profesional
 
-### Respuesta
+### Respuesta del servidor
     (200)
     {
         "profesional": {
@@ -337,7 +337,7 @@ PREFIJO: api-backend-prueba
 ### Datos recibidos por URL
     id_profesional
 
-### Respuesta
+### Respuesta del servidor
     (200)
     {
         "profesional": {
@@ -373,7 +373,7 @@ PREFIJO: api-backend-prueba
         "telefono":"+56 9 222323233",
         "mensaje":"Probando formulario correctamente"
     }
->### Respuesta
+>### Respuesta del servidor
 
     (200)
     {
@@ -392,7 +392,7 @@ PREFIJO: api-backend-prueba
 ### Ruta: /solicitud-formulario
     Metodo GET - Ruta: /obtener-solicitudes-formulario
 
->#### Respuesta
+>#### Respuesta del servidor
     (200)
     {
         "solicitud_formulario": [
@@ -436,7 +436,7 @@ PREFIJO: api-backend-prueba
 ### Datos recibidos por URL
     id_solicitud_formulario
 
-### Respuesta
+### Respuesta del servidor
     (200)
     {
         "solicitud_formulario": {
@@ -460,7 +460,7 @@ PREFIJO: api-backend-prueba
 ### Datos recibidos por URL
     id_solicitud_formulario
 
-### Respuesta
+### Respuesta del servidor
     (200)
     {
         "profesional": {
