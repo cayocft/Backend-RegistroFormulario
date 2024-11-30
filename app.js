@@ -14,10 +14,13 @@ const profesional = require('./router/profesional');
 const registroForm = require('./router/registroForm');
 const usuario = require('./router/usuario');
 const solicitud_formulario = require('./router/solicitudFormulario');
+const servicio_empresa = require('./router/servicioEmpresa');
+
 api.use('/profesional',profesional);
 api.use('/registroForm',registroForm);
 api.use('/usuario',usuario);
 api.use('/solicitud-formulario',solicitud_formulario);
+api.use('/servicio-empresa',servicio_empresa);
 app.use(process.env.PREFIJO, api)
 /** CONEXION MONGO */
 const mongoose = require('mongoose')
