@@ -5,6 +5,7 @@
 ## 3 Usuarios
 ## 4 Profesionales Servicio Técnico
 ## 5 Solicitud Formulario 
+## 6 Servicios de la Empresa 
 -----
 ## Servicios 
 
@@ -479,6 +480,124 @@ PREFIJO: api-backend-prueba
                 }
             },
             "operationTime": "7442120881544888354",
+            "deletedCount": 1
+        }
+    }
+
+### 6- Servicios de la Empresa
+
+### Ruta: /servicio-empresa
+>#### Registrar Servicios de la Empresa
+    Methodo POST - Ruta: /crear-servicio-empresa
+>#### Datos recibidos (JSON)
+    "solicitud_formulario": {
+        "nombre":"Mantenimiento Preventivo PC,
+        "descripcion":"Aplicaremos un mantenimiento preventivo de tu PC tu PC",
+        "valor":50000
+    }
+>### Respuesta del servidor
+
+    (200)
+    {
+        "servicio_empresa": {
+            "_id": "674a5af226ec3006e2d884bd",
+            "nombre": "Mantenimiento Preventivo PC",
+            "descripcion": "Aplicaremos un mantenimiento preventivo de tu PC tu PC",
+            "valor": 50000,
+            "__v": 0
+        }
+    }
+
+### Obtener Servicios Empresa
+### Ruta: /servicio-empresa
+    Metodo GET - Ruta: /obtener-servicios-empresa
+
+>#### Respuesta del servidor
+    (200)
+    {
+        "servicios_empresa": [
+            {
+            "_id": "674a5af226ec3006e2d884bd",
+            "nombre": "Mantenimiento Preventivo PC",
+            "descripcion": "Aplicaremos un mantenimiento preventivo de tu PC tu PC",
+            "valor": 50000,
+            "__v": 0
+            },
+            {
+            "_id": "674a5a2526ec3006e2d884bc",
+            "nombre": "Mantenimiento Preventivo PC",
+            "descripcion": "Aplicaremos un mantenimiento preventivo de tu PC tu PC",
+            "valor": 50000,
+            "__v": 0
+            },
+            {
+            "_id": "674a59e226ec3006e2d884bb",
+            "nombre": "Optimizacion PC",
+            "descripcion": "Optimizaremos tu PC",
+            "valor": 50000,
+            "__v": 0
+            },
+            {
+            "_id": "674a59cc26ec3006e2d884ba",
+            "nombre": "Formateo PC",
+            "descripcion": "Formateando",
+            "valor": 2000,
+            "__v": 0
+            }
+        ]
+    }
+
+### Obtener Servicio de Empresa  por ID
+### Ruta: /servicio-empresa
+    Methodo GET - Ruta: /obtener-servicio-empresa-por-id/:id_servicio_empresa
+
+### Ejemplo: /servicio-empresa
+    /servicio-empresa/obtener-servicio-empresa-por-id/674a5af226ec3006e2d884bd
+
+### Datos recibidos por URL
+    id_servicio_empresa
+
+### Respuesta del servidor
+    (200)
+    {
+        "servicio_empresa": {
+            "_id": "674a5af226ec3006e2d884bd",
+            "nombre": "Mantenimiento Preventivo PC",
+            "descripcion": "Aplicaremos un mantenimiento preventivo de tu PC tu PC",
+            "valor": 50000,
+            "__v": 0
+        }
+    }
+
+### Eloiminar Servicio de Empresa  por ID
+### Ruta: /servicio-empresa
+    Methodo GET - Ruta: /eliminar-servicio-empresa-por-id/:id_servicio_empresa
+
+### Ejemplo: /servicio-empresa
+    /servicio-empresa/eliminar-servicio-empresa-por-id/674a5af226ec3006e2d884bd
+
+### Datos recibidos por URL
+    id_servicio_empresa
+
+### Respuesta del servidor
+    (200)
+    {
+        "servicio_empresa": {
+            "n": 1,
+            "electionId": "7fffffff000000000000024c",
+            "opTime": {
+            "ts": "7442863051893637127",
+            "t": 588
+            },
+            "ok": 1,
+            "$clusterTime": {
+            "clusterTime": "7442863051893637127",
+            "signature": {
+                "hash": "pV9AY791mBNh6/7ifIRcWjRZDOk=",
+                "keyId": "7394796307652542503"
+            }
+            },
+            "operationTime": "7442863051893637127",
             "deletedCount": 1
         }
     }

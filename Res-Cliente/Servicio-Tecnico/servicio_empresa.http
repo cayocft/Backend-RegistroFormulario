@@ -1,0 +1,23 @@
+### Crear Profesional
+POST http://localhost:3000/api-backend-prueba/servicio-empresa/crear-servicio-empresa
+Content-Type: application/json
+# Este es el Bady para crear un Servicio tecnico
+
+{ 
+    //Este es el Contenido estructurado
+    "servicio_empresa": {
+        "nombre":"Mantenimiento Preventivo PC",
+        "descripcion":"Aplicaremos un mantenimiento preventivo de tu PC tu PC",
+        "valor":50000
+    }
+}
+
+###Obtener Todos los Servicios empresa registrados
+GET http://localhost:3000/api-backend-prueba/servicio-empresa/obtener-servicios-empresa
+
+###Obtener Profesional por ID
+GET http://localhost:3000/api-backend-prueba/servicio-empresa/obtener-servicio-empresa-por-id/674a5af226ec3006e2d884bd
+
+### Eliminar Profesional por ID
+
+DELETE http://localhost:3000/api-backend-prueba/servicio-empresa/eliminar-servicio-empresa-por-id/674a5af226ec3006e2d884bd
