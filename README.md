@@ -6,6 +6,7 @@
 ## 4 Profesionales Servicio Técnico
 ## 5 Solicitud Formulario 
 ## 6 Servicios de la Empresa 
+## 7 Dato de Empresa
 -----
 ## Servicios 
 
@@ -601,3 +602,26 @@ PREFIJO: api-backend-prueba
             "deletedCount": 1
         }
     }
+
+### 7- Dato de Empresa
+
+### Ruta: /dato-empresa
+>#### Obtener Dato de Empresa
+    Methodo GET - Ruta: /obtener-dato-empresa 
+>#### Datos recibidos
+    
+    No recibe datos
+    
+>#### Respuesta del servidor
+    (200)
+        {
+            "dato_empresa": {
+                "_id": "675a175c3a2af02130f9af73",
+                "razon_social": "Mercy Developer Servicio Tecnico Oficial",
+                "rol": "77.252.988-k",
+                "correo": "contacto@mercydeveloper.com",
+                "especialidad": "Servicio Tecnico de Computadoras y Redes",
+                "telefono": "+56 9 4423 9873",
+                "__v": 0
+            }
+        }

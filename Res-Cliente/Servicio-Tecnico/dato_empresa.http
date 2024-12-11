@@ -1,0 +1,18 @@
+### Crear Dato Empresa (Una sola vez)
+POST http://localhost:3000/api-backend-prueba/dato-empresa/crear-dato-empresa
+Content-Type: application/json
+# Este es el Bady para crear un Servicio tecnico
+
+{ 
+    //Este es el Contenido estructurado
+    "dato_empresa": {
+        "razon_social":"Mercy Developer Servicio Tecnico Oficial",
+        "rol":"77.252.988-k",
+        "correo":"contacto@mercydeveloper.com",
+        "especialidad":"Servicio Tecnico de Computadoras y Redes",
+        "telefono":"+56 9 4423 9873"
+    }
+}
+
+###Obtener Dato de Empresa
+GET http://localhost:3000/api-backend-prueba/dato-empresa/obtener-dato-empresa
