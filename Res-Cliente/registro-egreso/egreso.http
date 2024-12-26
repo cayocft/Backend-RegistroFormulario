@@ -1,0 +1,16 @@
+### Crear Egresos
+POST http://localhost:3000/api-backend-prueba/egreso/crear-egreso
+Content-Type: application/json
+# Este es el Bady para crear un Servicio tecnico
+
+{ 
+    //Este es el Contenido estructurado
+    "descripcion":"Egreso navidad",
+    "precio": 200000,
+    "id_usuario":{
+        "_id":"65d2b09233da71002bbe8ec6"
+    }
+}
+
+###Obtener Todos los egresos registrados
+GET http://localhost:3000/api-backend-prueba/egreso/obtener-egresos
