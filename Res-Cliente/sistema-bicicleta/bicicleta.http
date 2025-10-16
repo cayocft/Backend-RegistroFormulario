@@ -1,0 +1,32 @@
+### Registrar bicicleta
+POST http://localhost:3000/api-backend-prueba/bicicleta/registrar
+Content-Type: application/json
+
+{
+  "rut": "12345678-9",
+  "marca": "Trek",
+  "modelo": "FX 1",
+  "color": "Rojo",
+  "estacionamiento": "A1"
+}
+
+### Listar todas las bicicletas
+GET http://localhost:3000/api-backend-prueba/bicicleta/listar
+
+### Obtener bicicleta por ID
+GET http://localhost:3000/api/bicicletas/6500abc1234567890abcdef1
+
+### Listar bicicletas por estudiante (RUT)
+GET http://localhost:3000/api/bicicletas/estudiante/12345678-9
+
+### Actualizar bicicleta por ID
+PUT http://localhost:3000/api/bicicletas/6500abc1234567890abcdef1
+Content-Type: application/json
+
+{
+  "color": "Azul",
+  "estacionamiento": "B2"
+}
+
+### Eliminar bicicleta por ID
+DELETE http://localhost:3000/api/bicicletas/6500abc1234567890abcdef1

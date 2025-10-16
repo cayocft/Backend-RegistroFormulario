@@ -1,0 +1,29 @@
+### Crear estudiante
+POST http://localhost:3000/api-backend-prueba/estudiante/crear
+Content-Type: application/json
+
+{
+  "nombre": "Juan",
+  "apellido": "Perez",
+  "rut": "12345678-9",
+  "correo": "juan@example.com"
+}
+
+### Listar estudiantes
+GET http://localhost:3000/api-backend-prueba/estudiante/listar
+
+### Buscar estudiante por RUT
+GET http://localhost:3000/api-backend-prueba/estudiante/buscar/1234567-9
+
+### Actualizar estudiante
+PUT http://localhost:3000/api-backend-prueba/estudiante/actualizar/12345678-9
+Content-Type: application/json
+
+{
+  "nombre": "Juan Carlos",
+  "apellido": "Perez Soto",
+  "correo": "juancarlos@example.com"
+}
+
+### Eliminar estudiante
+DELETE http://localhost:3000/api-backend-prueba/estudiante/eliminar/12345678-9

@@ -17,6 +17,13 @@ const solicitud_formulario = require('./router/solicitudFormulario');
 const servicio_empresa = require('./router/servicioEmpresa');
 const dato_empresa = require('./router/datoEmpresa');
 
+//Sistema Bicicleta
+
+const estudiante = require('./services/estudiante/estudiante.routes');
+const bicicleta = require('./services/bicileta/bicicleta.routes');
+
+//FIN Sistema Bicicleta
+
 //Para sistema Egresos
 const inicio = require('./router/login')
 const egreso = require('./router/egreso')
@@ -28,6 +35,11 @@ api.use('/usuario',usuario);
 api.use('/solicitud-formulario',solicitud_formulario);
 api.use('/servicio-empresa',servicio_empresa);
 api.use('/dato-empresa',dato_empresa);
+
+//Sistema Bicicleta
+api.use('/estudiante',estudiante);
+api.use('/bicicleta',bicicleta);
+//Fin sistema Bicicleta
 
 //Para sistema Egresos
 api.use('/inicio',inicio)
