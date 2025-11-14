@@ -251,6 +251,40 @@ http://localhost:3000/api-backend-prueba
 
 ---
 
+## 🚀 Endpoints Estudiante
+### 1. Crear usuario de acceso
+
+* **Método:** `POST`
+* **Ruta:** `/acceso/crear`
+* **Descripción:** `Registra un nuevo usuario autorizado.`
+
+* **Body (JSON):**
+
+```json
+{
+  "nombre": "Pedro",
+  "apellido": "Morales",
+  "correo": "pedro.morales@example.com",
+  "rut": "12.345.678-9",
+  "password": "123456"
+}
+```
+* **Respuesta exitosa (201):**
+
+```json
+{
+  "message": "Usuario de acceso creado",
+  "usuario": {
+    "_id": "6502abc1234567890abcdef1",
+    "nombre": "Pedro",
+    "apellido": "Morales",
+    "correo": "pedro.morales@example.com",
+    "rut": "12.345.678-9",
+    "createdAt": "2025-11-16T03:00:00.000Z",
+    "updatedAt": "2025-11-16T03:00:00.000Z"
+  }
+}
+```
 ### 🔹 Notas importantes
 
 * Todos los endpoints usan **JSON** como formato de entrada y salida.

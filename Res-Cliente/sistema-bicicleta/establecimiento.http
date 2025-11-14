@@ -1,0 +1,34 @@
+#########################################
+###    ESTABLECIMIENTOS API TESTING   ###
+#########################################
+
+### Crear establecimiento
+POST http://localhost:3000/api-backend-prueba/establecimiento/crear
+Content-Type: application/json
+
+{
+  "nombre": "Universidad Técnica",
+  "direccion": "Av. Siempre Viva 123",
+  "capacidad": 20
+}
+
+### Listar todos los establecimientos
+GET http://localhost:3000/api-backend-prueba/establecimiento/listar
+
+### Obtener establecimiento por ID
+GET http://localhost:3000/api-backend-prueba/establecimiento/obtener/690d042b394c53154066b6e1
+
+
+#########################################
+###  BICICLETAS DENTRO ESTABLECIMIENTO ###
+#########################################
+
+### Listar bicicletas dentro del establecimiento
+GET http://localhost:3000/api-backend-prueba/establecimiento/bicicletas/690d042b394c53154066b6e1
+
+### Asignar bicicleta a establecimiento
+PUT http://localhost:3000/api-backend-prueba/establecimiento/asignar-bicicleta/ID_BICICLETA/ID_ESTABLECIMIENTO
+
+
+### Remover bicicleta del establecimiento
+PUT http://localhost:3000/api-backend-prueba/establecimiento/remover-bicicleta/ID_BICICLETA

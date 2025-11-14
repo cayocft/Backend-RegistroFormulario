@@ -21,6 +21,8 @@ const dato_empresa = require('./router/datoEmpresa');
 
 const estudiante = require('./services/estudiante/estudiante.routes');
 const bicicleta = require('./services/bicileta/bicicleta.routes');
+const establecimiento = require('./services/establecimiento/establecimiento.routes');
+const acceso = require('./services/acceso/acceso.routes');
 
 //FIN Sistema Bicicleta
 
@@ -39,6 +41,8 @@ api.use('/dato-empresa',dato_empresa);
 //Sistema Bicicleta
 api.use('/estudiante',estudiante);
 api.use('/bicicleta',bicicleta);
+api.use('/establecimiento',establecimiento);
+api.use('/acceso',acceso);
 //Fin sistema Bicicleta
 
 //Para sistema Egresos

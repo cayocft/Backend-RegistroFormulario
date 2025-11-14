@@ -1,0 +1,55 @@
+### =========================
+###  ACCESO - CREAR USUARIO
+### =========================
+POST http://localhost:3000/api-backend-prueba/acceso/crear
+Content-Type: application/json
+
+{
+  "nombre": "Diego",
+  "apellido": "Pérez",
+  "correo": "diego.perez@example.com",
+  "rut": "12.345.678-9",
+  "password": "123456"
+}
+
+### =========================
+###  ACCESO - LOGIN
+### =========================
+POST http://localhost:3000/api-backend-prueba/acceso/login
+Content-Type: application/json
+
+{
+  "correo": "diego.perez@example.com",
+  "password": "123456"
+}
+
+### =========================
+###  ACCESO - OBTENER TODOS
+### =========================
+GET http://localhost:3000/api-backend-prueba/acceso/obtener
+
+### =========================
+###  ACCESO - OBTENER POR ID
+### =========================
+GET http://localhost:3000/api-backend-prueba/acceso/ID_AQUI
+### Reemplazar ID_AQUI por _id real
+
+
+### =========================
+###  ACCESO - ACTUALIZAR USUARIO
+### =========================
+PUT http://localhost:3000/api-backend-prueba/acceso/ID_AQUI
+Content-Type: application/json
+
+{
+  "nombre": "Juan Actualizado",
+  "apellido": "Pérez",
+  "correo": "juan.perez@example.com",
+  "rut": "12.345.678-9",
+  "password": "654321"
+}
+
+### =========================
+###  ACCESO - ELIMINAR USUARIO
+### =========================
+DELETE http://localhost:3000/api-backend-prueba/acceso/ID_AQUI
