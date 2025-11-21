@@ -7,7 +7,8 @@ Content-Type: application/json
   "marca": "Trek",
   "modelo": "FX 1",
   "color": "Rojo",
-  "estacionamiento": "A1"
+  "estacionamiento": "A1",
+  "identificador": "acacias2551"
 }
 
 ### Listar todas las bicicletas
@@ -17,7 +18,10 @@ GET http://localhost:3000/api-backend-prueba/bicicleta/listar
 GET http://localhost:3000/api/bicicletas/6500abc1234567890abcdef1
 
 ### Listar bicicletas por estudiante (RUT)
-GET http://localhost:3000/api/bicicletas/estudiante/12345678-9
+GET http://localhost:3000/api-backend-prueba/bicicletas/estudiante/12345678-9
+
+### Listar bicicletas por establecimiento
+GET http://localhost:3000/api-backend-prueba/bicicleta/establecimiento/acacias2551
 
 ### Actualizar bicicleta por ID
 PUT http://localhost:3000/api/bicicletas/6500abc1234567890abcdef1

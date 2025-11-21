@@ -17,6 +17,10 @@ exports.obtenerPorEstudiante = async (estudianteId) => {
   return await Bicicleta.find({ estudiante: estudianteId }).populate('estudiante');
 };
 
+exports.obtenerPorEstablecimiento = async (establecimientoId) => {
+  return await Bicicleta.find({ identificador: establecimientoId }).populate('establecimiento');
+};
+
 exports.actualizarBicicleta = async (id, data) => {
   return await Bicicleta.findByIdAndUpdate(id, data, { new: true }).populate('estudiante');
 };

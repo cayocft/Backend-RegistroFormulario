@@ -1,15 +1,22 @@
-const bicicletaRepo = require('./estudiante.repository');
+const bicicletaRepo = require('./bicicleta.repository');
 const Estudiante = require('../estudiante/estudiante.model');
+const Bicicleta = require('./bicicleta.model');
+const Establecimiento = require('../establecimiento/establecimiento.model');
 
 // Registrar bicicleta vinculada a estudiante por RUT
 exports.registrarBicicleta = async (req, res) => {
   try {
-    const { rut, marca, modelo, color, estacionamiento } = req.body;
+    const { rut, marca, modelo, color, estacionamiento, identificador } = req.body;
 
     // Buscar estudiante por RUT
     let estudiante = await Estudiante.findOne({ rut });
+    let establecimiento = await Establecimiento.findOne({ identificador });
     if (!estudiante) {
       return res.status(400).json({ message: 'Estudiante no encontrado. Registra primero al estudiante.' });
+    }
+
+    if (!establecimiento) {
+      return res.status(400).json({ message: 'Establecimiento no encontrado. Comuniquese con el administrador.' });
     }
 
     const nuevaBicicleta = await bicicletaRepo.crearBicicleta({
@@ -17,7 +24,8 @@ exports.registrarBicicleta = async (req, res) => {
       marca,
       modelo,
       color,
-      estacionamiento
+      estacionamiento,
+      identificador: establecimiento._id
     });
 
     res.status(201).json({ message: 'Bicicleta registrada', bicicleta: nuevaBicicleta });
@@ -61,6 +69,22 @@ exports.listarPorEstudiante = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Error al listar bicicletas por estudiante', error });
+  }
+};
+
+//nueva
+// Listar bicicletas por Establecimiento
+exports.listarPorEstablecimiento= async (req, res) => {
+  try {
+    console.log(req.params.identificador)
+    const establecimiento = await Establecimiento.findOne({ identificador: req.params.identificador });
+    if (!establecimiento) return res.status(404).json({ message: 'Establecimiento no encontrado' });
+
+    const bicicletas = await bicicletaRepo.obtenerPorEstablecimiento(establecimiento._id);
+    res.json(bicicletas);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error al listar bicicletas por establecimiento', error });
   }
 };
 

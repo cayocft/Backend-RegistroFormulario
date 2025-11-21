@@ -7,8 +7,9 @@ POST http://localhost:3000/api-backend-prueba/establecimiento/crear
 Content-Type: application/json
 
 {
-  "nombre": "Universidad Técnica",
-  "direccion": "Av. Siempre Viva 123",
+  "identificador": "lincoyan32221",
+  "nombre": "Lincoyan",
+  "direccion": "lincoyan 3222",
   "capacidad": 20
 }
 
@@ -16,19 +17,16 @@ Content-Type: application/json
 GET http://localhost:3000/api-backend-prueba/establecimiento/listar
 
 ### Obtener establecimiento por ID
-GET http://localhost:3000/api-backend-prueba/establecimiento/obtener/690d042b394c53154066b6e1
+GET http://localhost:3000/api-backend-prueba/establecimiento/obtener/691f6de923d31003d07fb28f
 
+### Acctualizar establecimiento
+PUT http://localhost:3000/api-backend-prueba/establecimiento/actualizar/690d0039ca618e39c846a8ac
+Content-Type: application/json
 
-#########################################
-###  BICICLETAS DENTRO ESTABLECIMIENTO ###
-#########################################
+{
+  "identificador": "cft4223",
+  "nombre": "CFT tecnico",
+  "direccion": "acacios 777",
+  "capacidad": 20
+}
 
-### Listar bicicletas dentro del establecimiento
-GET http://localhost:3000/api-backend-prueba/establecimiento/bicicletas/690d042b394c53154066b6e1
-
-### Asignar bicicleta a establecimiento
-PUT http://localhost:3000/api-backend-prueba/establecimiento/asignar-bicicleta/ID_BICICLETA/ID_ESTABLECIMIENTO
-
-
-### Remover bicicleta del establecimiento
-PUT http://localhost:3000/api-backend-prueba/establecimiento/remover-bicicleta/ID_BICICLETA

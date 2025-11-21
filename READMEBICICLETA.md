@@ -157,7 +157,8 @@ http://localhost:3000/api-backend-prueba
   "marca": "Trek",
   "modelo": "FX 1",
   "color": "Rojo",
-  "estacionamiento": "A1"
+  "estacionamiento": "A1",
+  "establecimiento": "lincoyan"
 }
 ```
 
@@ -201,7 +202,8 @@ http://localhost:3000/api-backend-prueba
     "modelo": "FX 1",
     "color": "Rojo",
     "estacionamiento": "A1",
-    "fechaRegistro": "2025-10-16T03:15:00.000Z"
+    "fechaRegistro": "2025-10-16T03:15:00.000Z",
+    "identificador": "6500abc1234567890abcdef1"
   }
 ]
 ```
@@ -226,7 +228,16 @@ http://localhost:3000/api-backend-prueba
 
 ---
 
-### 5. Actualizar bicicleta por ID
+### 5. Listar bicicletas por establecimiento (identificador)
+
+* **Método:** `GET`
+* **Ruta:** `/bicicleta/establecimiento/:identificador`
+* **Descripción:** Lista todas las bicicletas de un Establecimiento.
+* **Ejemplo:** `/bicicleta/establecimiento/acacias2551`
+
+---
+
+### 6. Actualizar bicicleta por ID
 
 * **Método:** `PUT`
 * **Ruta:** `/bicicleta/:id`
@@ -243,7 +254,7 @@ http://localhost:3000/api-backend-prueba
 
 ---
 
-### 6. Eliminar bicicleta por ID
+### 7. Eliminar bicicleta por ID
 
 * **Método:** `DELETE`
 * **Ruta:** `/bicicleta/:id`
@@ -285,6 +296,97 @@ http://localhost:3000/api-backend-prueba
   }
 }
 ```
+
+---
+
+## 📘 Endpoints Establecimiento
+
+### 1. Registrar Establecimiento
+
+* **Método:** `POST`
+* **Ruta:** `/establecimiento/crear`
+* **Descripción:** Registra un establecimiento.
+* **Body (JSON):**
+
+```json
+{
+  "identificador": "lincoyan32221",
+  "nombre": "Lincoyan",
+  "descripcion": "CFT Campus lincoyan",
+  "direccion": "lincoyan 3222",
+  "capacidad": 20,
+}
+```
+
+* **Respuesta (201):**
+
+```json
+{
+  "message": "Establecimiento Registrado",
+  "establecimiento": {
+    "_id": "691fdee9e500945d68266592",
+    "identificador": "lincoyan32221",
+    "nombre": "Lincoyan",
+    "direccion": "lincoyan 3222",
+    "capacidad": 20,
+    "fechaRegistro": "2025-11-21T03:39:21.629Z",
+    "createdAt": "2025-11-21T03:39:21.632Z",
+    "updatedAt": "2025-11-21T03:39:21.632Z",
+    "__v": 0
+  }
+}
+```
+---
+
+### 2. Listar todos los establecimiento
+
+* **Método:** `GET`
+* **Ruta:** `/establecimiento/listar`
+* **Descripción:** Retorna todas los establecimiento registradas.
+* **Respuesta (200):**
+
+```json
+[
+  {
+    "_id": "690d0039ca618e39c846a8ac",
+    "nombre": "CFT Técnica Arica",
+    "direccion": "Av. Siempre Viva 123",
+    "capacidad": 20,
+    "bicicletas": [],
+    "fechaRegistro": "2025-11-06T20:08:25.747Z",
+    "__v": 0
+  },
+  ...
+]
+```
+### 3. Obtener establecimiento por ID
+
+* **Método:** `GET`
+* **Ruta:** `/bicicleta/:id`
+* **Descripción:** Obtiene los datos de un establecimiento por id específica.
+* **Ejemplo:** `/establecimiento/691f6de923d31003d07fb28f`
+
+---
+
+### 4. Actualizar estab por ID
+
+* **Método:** `PUT`
+* **Ruta:** `/establecimiento/actualizar/:id`
+* **Ejemplo:** `/establecimiento/actualizar/690d0039ca618e39c846a8ac`
+* **Body (JSON):**
+
+```json
+{
+  "identificador": "linco776",
+  "nombre": "Lincoyan",
+  "descripcion": "CFT Campus lincoyan",
+  "direccion": "lincoyan 3222",
+  "capacidad": 20,
+}
+```
+
+---
+
 ### 🔹 Notas importantes
 
 * Todos los endpoints usan **JSON** como formato de entrada y salida.

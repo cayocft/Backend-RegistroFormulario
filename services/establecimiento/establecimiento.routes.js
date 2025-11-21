@@ -16,4 +16,8 @@ router.put('/asignar-bicicleta/:idBici/:idEst', controller.asignarBicicleta);
 // Remover bicicleta del establecimiento
 router.put('/remover-bicicleta/:idBici', controller.removerBicicleta);
 
+// Actualizar establecimiento por ID
+router.put('/actualizar/:id', controller.actualizarEstablecimiento);
+
+
 module.exports = router;

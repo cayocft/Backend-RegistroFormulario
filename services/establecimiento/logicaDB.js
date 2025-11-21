@@ -9,6 +9,10 @@ async function listarEstablecimientos() {
   return await Establecimiento.find();
 }
 
+async function obtenerOnePorIdentificador(identificador) {
+  return await Establecimiento.findOne({identificador});
+}
+
 async function obtenerEstablecimientoPorId(id) {
   return await Establecimiento.findById(id);
 }
@@ -33,11 +37,17 @@ async function removerBicicleta(idBici) {
   );
 }
 
+async function actualizarEstablecimiento (id, data)  {
+  return await Establecimiento.findByIdAndUpdate(id, data, { new: true })
+};
+
 module.exports = {
   crearEstablecimiento,
   listarEstablecimientos,
+  obtenerOnePorIdentificador,
   obtenerEstablecimientoPorId,
   obtenerBicicletasPorEstablecimiento,
   asignarBicicleta,
-  removerBicicleta
+  removerBicicleta,
+  actualizarEstablecimiento
 };

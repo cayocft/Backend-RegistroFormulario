@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const bicicletaController = require('./estudiante.controlador');
+const bicicletaController = require('./bicicleta.controlador');
 
 // Registrar bicicleta vinculada a estudiante
 // POST http://localhost:3000/api/bicicletas/registrar
@@ -18,6 +18,11 @@ router.get('/:id', bicicletaController.obtenerBicicleta);
 // Listar bicicletas de un estudiante por RUT
 // GET http://localhost:3000/api/bicicletas/estudiante/:rut
 router.get('/estudiante/:rut', bicicletaController.listarPorEstudiante);
+
+// Listar bicicletas de un establecimiento
+// GET http://localhost:3000/api/bicicletas/establecimiento/:identificador
+router.get('/establecimiento/:identificador', bicicletaController.listarPorEstablecimiento);
+
 
 // Actualizar bicicleta por ID
 // PUT http://localhost:3000/api/bicicletas/:id

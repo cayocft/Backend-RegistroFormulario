@@ -7,7 +7,8 @@ const bicicletaSchema = new Schema({
   modelo: { type: String, required: false },
   color: { type: String, required: true },
   fechaRegistro: { type: Date, default: Date.now },
-  estacionamiento: { type: String, default: null }
+  estacionamiento: { type: String, default: null },
+  identificador: { type: Schema.Types.ObjectId, ref: 'Establecimiento', required: true },
 }, {
   timestamps: true
 });
