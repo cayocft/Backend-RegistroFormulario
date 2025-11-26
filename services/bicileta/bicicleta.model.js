@@ -13,4 +13,5 @@ const bicicletaSchema = new Schema({
   timestamps: true
 });
 
+
 module.exports = mongoose.model('Bicicleta', bicicletaSchema);

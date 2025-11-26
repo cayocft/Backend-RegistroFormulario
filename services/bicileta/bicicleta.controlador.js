@@ -62,9 +62,10 @@ exports.obtenerBicicleta = async (req, res) => {
 exports.listarPorEstudiante = async (req, res) => {
   try {
     const estudiante = await Estudiante.findOne({ rut: req.params.rut });
-    if (!estudiante) return res.status(404).json({ message: 'Estudiante no encontrado' });
+    if (!estudiante)
+      return res.status(404).json({ message: 'Estudiante no encontrado' });
 
-    const bicicletas = await bicicletaRepo.obtenerPorEstudiante(estudiante._id);
+    const bicicletas = await bicicletaRepo.obtenerPorEstudianteAgrupadas(estudiante._id);
     res.json(bicicletas);
   } catch (error) {
     console.error(error);

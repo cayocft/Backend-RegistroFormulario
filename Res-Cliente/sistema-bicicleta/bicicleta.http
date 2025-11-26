@@ -18,7 +18,7 @@ GET http://localhost:3000/api-backend-prueba/bicicleta/listar
 GET http://localhost:3000/api/bicicletas/6500abc1234567890abcdef1
 
 ### Listar bicicletas por estudiante (RUT)
-GET http://localhost:3000/api-backend-prueba/bicicletas/estudiante/12345678-9
+GET http://localhost:3000/api-backend-prueba/bicicleta/estudiante/22416554-4
 
 ### Listar bicicletas por establecimiento
 GET http://localhost:3000/api-backend-prueba/bicicleta/establecimiento/acacias2551

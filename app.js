@@ -51,6 +51,7 @@ api.use('/egreso', egreso)
 
 //Fin Sistema Egreso
 
+
 app.use(process.env.PREFIJO, api)
 /** CONEXION MONGO */
 const mongoose = require('mongoose')
@@ -65,3 +66,6 @@ const puerto = process.env.PORT || 3000
 app.listen(puerto,function () {
     console.log('Servidor funcionando en el puerto: ' + puerto)
 })
+
+const Bicicleta = require('./services/bicileta/bicicleta.model');
+

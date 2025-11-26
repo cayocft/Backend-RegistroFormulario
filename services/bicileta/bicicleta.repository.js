@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const Bicicleta = require('./bicicleta.model');
 
 exports.crearBicicleta = async (data) => {
@@ -13,8 +14,28 @@ exports.obtenerPorId = async (id) => {
   return await Bicicleta.findById(id).populate('estudiante');
 };
 
-exports.obtenerPorEstudiante = async (estudianteId) => {
-  return await Bicicleta.find({ estudiante: estudianteId }).populate('estudiante');
+exports.obtenerPorEstudianteAgrupadas = async (estudianteId) => {
+  return await Bicicleta.aggregate([
+    {
+      $match: {
+        estudiante: new mongoose.Types.ObjectId(estudianteId)
+      }
+    },
+    {
+      $group: {
+        _id: {
+          marca: "$marca",
+          modelo: "$modelo",
+          color: "$color",
+          estudiante: "$estudiante"
+        },
+        bicicleta: { $first: "$$ROOT" }
+      }
+    },
+    {
+      $replaceRoot: { newRoot: "$bicicleta" }
+    }
+  ]);
 };
 
 exports.obtenerPorEstablecimiento = async (establecimientoId) => {
