@@ -32,4 +32,11 @@ router.put('/:id', bicicletaController.actualizarBicicleta);
 // DELETE http://localhost:3000/api/bicicletas/:id
 router.delete('/:id', bicicletaController.eliminarBicicleta);
 
+//obtener todas las biciclertas por una fecha y por establecimiento
+router.get(
+  "/establecimiento/:identificador/fecha/:fecha",
+  bicicletaController.obtenerBicicletasPorEstablecimientoYFecha
+);
+
+
 module.exports = router;

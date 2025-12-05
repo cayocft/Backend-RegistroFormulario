@@ -49,3 +49,19 @@ exports.actualizarBicicleta = async (id, data) => {
 exports.eliminarBicicleta = async (id) => {
   return await Bicicleta.findByIdAndDelete(id);
 };
+
+
+//Obtener bicicletas por fecha y establecimiento
+
+exports.obtenerPorEstablecimientoYFecha = async (establecimientoId, fecha) => {
+  const fechaInicio = new Date(fecha + "T00:00:00.000Z");
+  const fechaFin = new Date(fecha + "T23:59:59.999Z");
+
+  return await Bicicleta.find({
+    identificador: establecimientoId,   // <--- Correcto según tu modelo
+    fechaRegistro: { $gte: fechaInicio, $lte: fechaFin }
+  })
+  .populate('estudiante')
+  //.populate('identificador') // populate del establecimiento
+  .sort({ fechaRegistro: -1 });
+};

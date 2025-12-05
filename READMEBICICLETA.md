@@ -261,6 +261,34 @@ http://localhost:3000/api-backend-prueba
 * **Descripción:** Elimina la bicicleta registrada.
 
 ---
+### 8. Obtener Todas las bicicletas por ID establecimiento y por fecha
+
+* **Método:** `DELETE`
+* **Ruta:** `/bicicleta/establecimiento/:identificador/fecha/:fecha`
+* **Descripción:** Elimina la bicicleta registrada.
+* **Apoyo:** se debe enviar _id como el identificador del establecimiento y no la referencia 
+* **Ejemplo:** `/bicicleta/establecimiento/690d03b8394c53154066b6e0/fecha/2025-12-04`
+* **Respuesta (200):** 
+
+```json
+[
+  {
+    "estacionamiento": "A2",
+    "_id": "6931e464549ec900323e10b1",
+    "estudiante": {
+      "_id": "6931e084549ec900323e10af",
+      "nombre": "Delta",
+      "apellido": "Beta",
+      "rut": "23.123.432-1",
+      "correo": "Alpha@gmail.com",
+      "createdAt": "2025-12-04T19:27:00.115Z",
+      "updatedAt": "2025-12-04T19:27:00.115Z",
+      "__v": 0
+    }, 
+  }...
+]
+```
+---
 
 ## 🚀 Endpoints Estudiante
 ### 1. Crear usuario de acceso

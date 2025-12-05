@@ -112,3 +112,24 @@ exports.eliminarBicicleta = async (req, res) => {
     res.status(500).json({ message: 'Error al eliminar bicicleta', error });
   }
 };
+
+exports.obtenerBicicletasPorEstablecimientoYFecha = async (req, res) => {
+  try {
+    const { identificador, fecha } = req.params;
+
+    if (!identificador || !fecha) {
+      return res.status(400).json({ message: "Faltan parámetros requeridos." });
+    }
+
+    const resultado = await bicicletaRepo.obtenerPorEstablecimientoYFecha(
+      identificador,
+      fecha
+    );
+
+    res.status(200).json(resultado);
+
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({ message: "Error interno del servidor." });
+  }
+};
