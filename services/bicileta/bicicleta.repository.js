@@ -65,3 +65,17 @@ exports.obtenerPorEstablecimientoYFecha = async (establecimientoId, fecha) => {
   //.populate('identificador') // populate del establecimiento
   .sort({ fechaRegistro: -1 });
 };
+
+//Obtener bicicletas por rango de fecha
+exports.obtenerPorEstablecimientoYRango = async (establecimientoId, fechaInicio, fechaFin) => {
+  const inicio = new Date(fechaInicio + "T00:00:00.000Z");
+  const fin = new Date(fechaFin + "T23:59:59.999Z");
+
+  return await Bicicleta.find({
+    identificador: establecimientoId,
+    fechaRegistro: { $gte: inicio, $lte: fin }
+  })
+  .populate('estudiante')
+  //.populate('identificador') // si tu establecimiento es referencia, lo activas
+  .sort({ fechaRegistro: -1 });
+};

@@ -38,5 +38,8 @@ router.get(
   bicicletaController.obtenerBicicletasPorEstablecimientoYFecha
 );
 
+// Rango de fechas (YYYY-MM-DD)
+router.get('/establecimiento-rango/:identificador/:desde/:hasta', bicicletaController.obtenerPorRango);
+
 
 module.exports = router;

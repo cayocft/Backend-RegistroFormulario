@@ -6,6 +6,8 @@ const controller = require('./controlador');
 router.post('/crear', controller.crear);
 router.get('/listar', controller.listar);
 router.get('/obtener/:id', controller.obtenerPorId);
+//Obtener por identificador
+router.get('/obtener-por-identificador/:identificador', controller.obtenerPorIdentificador);
 
 // Bicicletas dentro del establecimiento
 router.get('/bicicletas/:id', controller.listarBicicletas);

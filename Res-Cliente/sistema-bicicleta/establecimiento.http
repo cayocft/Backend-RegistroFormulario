@@ -7,8 +7,8 @@ POST http://localhost:3000/api-backend-prueba/establecimiento/crear
 Content-Type: application/json
 
 {
-  "identificador": "lincoyan32221",
-  "nombre": "Lincoyan",
+  "identificador": "campus-lincoyan",
+  "nombre": "Campus Lincoyan",
   "direccion": "lincoyan 3222",
   "capacidad": 20
 }
@@ -18,6 +18,10 @@ GET http://localhost:3000/api-backend-prueba/establecimiento/listar
 
 ### Obtener establecimiento por ID
 GET http://localhost:3000/api-backend-prueba/establecimiento/obtener/691f6de923d31003d07fb28f
+
+### Obtener establecimiento por IDENTIFIFCADOR
+GET http://localhost:3000/api-backend-prueba/establecimiento/obtener-por-identificador/lincoyan
+
 
 ### Acctualizar establecimiento
 PUT http://localhost:3000/api-backend-prueba/establecimiento/actualizar/690d0039ca618e39c846a8ac

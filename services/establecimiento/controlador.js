@@ -32,6 +32,17 @@ exports.obtenerPorId = async (req, res) => {
   }
 };
 
+//Obtener establecimiento por Identificador
+exports.obtenerPorIdentificador = async (req, res) => {
+  try {
+    const data = await logicaDB.obtenerOnePorIdentificador(req.params.identificador);
+    if (!data) return res.status(404).json({ message: "No encontrado" });
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 exports.listarBicicletas = async (req, res) => {
   try {
     const data = await logicaDB.obtenerBicicletasPorEstablecimiento(req.params.id);

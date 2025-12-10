@@ -37,3 +37,8 @@ DELETE http://localhost:3000/api/bicicletas/6500abc1234567890abcdef1
 
 ###Obtener todas las Bicicletas por una fecha y por establecimiento
 GET http://localhost:3000/api-backend-prueba/bicicleta/establecimiento/690d03b8394c53154066b6e0/fecha/2025-12-04
+
+### Obtener bicicletas por rango de fecha
+
+GET http://localhost:3000/api-backend-prueba/bicicleta/establecimiento-rango/690d03b8394c53154066b6e0/2025-10-16/2025-12-04
+

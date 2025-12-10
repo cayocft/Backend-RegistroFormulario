@@ -3,7 +3,7 @@
 Base URL:
 
 ```
-http://localhost:3000/api-backend-prueba
+https://backend-registroformulario.onrender.com/api-backend-prueba
 ```
 
 ---
@@ -158,7 +158,7 @@ http://localhost:3000/api-backend-prueba
   "modelo": "FX 1",
   "color": "Rojo",
   "estacionamiento": "A1",
-  "establecimiento": "lincoyan"
+  "identificador": "lincoyan"
 }
 ```
 
@@ -174,7 +174,8 @@ http://localhost:3000/api-backend-prueba
     "modelo": "FX 1",
     "color": "Rojo",
     "estacionamiento": "A1",
-    "fechaRegistro": "2025-10-16T03:15:00.000Z"
+    "fechaRegistro": "2025-10-16T03:15:00.000Z",
+    "identificador": "690d0039ca618e39c846a8ac"
   }
 }
 ```
@@ -260,12 +261,11 @@ http://localhost:3000/api-backend-prueba
 * **Ruta:** `/bicicleta/:id`
 * **Descripción:** Elimina la bicicleta registrada.
 
----
 ### 8. Obtener Todas las bicicletas por ID establecimiento y por fecha
 
-* **Método:** `DELETE`
+* **Método:** `GET`
 * **Ruta:** `/bicicleta/establecimiento/:identificador/fecha/:fecha`
-* **Descripción:** Elimina la bicicleta registrada.
+* **Descripción:** Obtiene todas las bicicletas registradas por un establecimiento con una fecha específica usando el id del establecimiento
 * **Apoyo:** se debe enviar _id como el identificador del establecimiento y no la referencia 
 * **Ejemplo:** `/bicicleta/establecimiento/690d03b8394c53154066b6e0/fecha/2025-12-04`
 * **Respuesta (200):** 
@@ -289,6 +289,36 @@ http://localhost:3000/api-backend-prueba
 ]
 ```
 ---
+
+### 9. Obtener Todas las bicicletas por ID establecimiento y por RANGO DE fecha (desde - hasta)
+
+* **Método:** `GET`
+* **Ruta:** `/bicicleta/establecimiento-rango/:identificador/:desde/:hasta`
+* **Descripción:** Obtiene todas las bicicletas registradas en un RANGO de fecha por un establecimiento usando el id del establecimiento
+* **Apoyo:** se debe enviar _id como el identificador del establecimiento y no la referencia 
+* **Ejemplo:** `/bicicleta/establecimiento-rango/690d03b8394c53154066b6e0/fecha/2025-10-16/2025-12-04`
+* **Respuesta (200):** 
+
+```json
+[
+  {
+    "estacionamiento": "A2",
+    "_id": "6931e464549ec900323e10b1",
+    "estudiante": {
+      "_id": "6931e084549ec900323e10af",
+      "nombre": "Delta",
+      "apellido": "Beta",
+      "rut": "23.123.432-1",
+      "correo": "Alpha@gmail.com",
+      "createdAt": "2025-12-04T19:27:00.115Z",
+      "updatedAt": "2025-12-04T19:27:00.115Z",
+      "__v": 0
+    }, 
+  }...
+]
+```
+---
+
 
 ## 🚀 Endpoints Estudiante
 ### 1. Crear usuario de acceso
@@ -340,7 +370,6 @@ http://localhost:3000/api-backend-prueba
 {
   "identificador": "lincoyan32221",
   "nombre": "Lincoyan",
-  "descripcion": "CFT Campus lincoyan",
   "direccion": "lincoyan 3222",
   "capacidad": 20,
 }
@@ -413,7 +442,180 @@ http://localhost:3000/api-backend-prueba
 }
 ```
 
+### 4. Obtener establecimiento por IDENTIFICADOR
+
+* **Método:** `GET`
+* **Ruta:** `/establecimiento/obtener-por-identificador/:identificador`
+* **Descripción:** Obtiene los datos de un establecimiento por id específica.
+* **Ejemplo:** `/establecimiento/obtener-por-identificador/lincoyan`
+
 ---
+
+
+## 🚀 Endpoints Acceso
+### 1. Crear Acceso de acceso
+
+* **Método:** `POST`
+* **Ruta:** `/acceso/crear`
+* **Descripción:** `Registra un nuevo Acceso autorizado.`
+
+* **Body (JSON):**
+
+```json
+{
+  "nombre": "Pedro",
+  "apellido": "Morales",
+  "correo": "pedro.morales@example.com",
+  "rut": "12.345.678-9",
+  "password": "123456"
+}
+```
+* **Respuesta exitosa (201):**
+
+```json
+{
+  "message": "Usuario de acceso creado",
+  "usuario": {
+    "_id": "6502abc1234567890abcdef1",
+    "nombre": "Pedro",
+    "apellido": "Morales",
+    "correo": "pedro.morales@example.com",
+    "rut": "12.345.678-9",
+    "createdAt": "2025-11-16T03:00:00.000Z",
+    "updatedAt": "2025-11-16T03:00:00.000Z"
+  }
+}
+```
+
+### 2. Login (Autenticación)
+
+* **Método:** `POST`
+* **Ruta:** `/acceso/login`
+* **Descripción:** `Inicia sesión con correo y contraseña.`
+
+* **Body (JSON):**
+
+```json
+{
+  "correo": "pedro.morales@example.com",
+  "password": "123456"
+}
+```
+
+* **Respuesta (200):**
+
+```json
+{
+  "message": "Acceso concedido",
+  "usuario": {
+    "_id": "6502abc1234567890abcdef1",
+    "nombre": "Pedro",
+    "apellido": "Morales",
+    "correo": "pedro.morales@example.com"
+  }
+}
+```
+
+### 3. Listar todos los Accesos
+
+* **Método:** `GET`
+* **Ruta:** `/acceso/obtener`
+* **Descripción:** `Lista todos los usuarios encargados del control de acceso.`
+
+* **Respuesta (200):**
+
+```json
+[
+  {
+    "_id": "6502abc1234567890abcdef1",
+    "nombre": "Pedro",
+    "apellido": "Morales",
+    "correo": "pedro.morales@example.com",
+    "rut": "12.345.678-9"
+  }
+]
+```
+
+
+### 4. Obtener Acceso por ID
+
+* **Método:** `GET`
+* **Ruta:** `/acceso/:id`
+* **Descripción:** `Obtiene información detallada de un usuario.`
+
+* **Ejemplo:**
+
+`/acceso/6502abc1234567890abcdef1`
+
+
+* **Respuesta (200):**
+
+```json
+{
+  "_id": "6502abc1234567890abcdef1",
+  "nombre": "Pedro",
+  "apellido": "Morales",
+  "correo": "pedro.morales@example.com",
+  "rut": "12.345.678-9"
+}
+```
+
+### 5. Actualizar Acceso por ID
+
+* **Método:** `PUT`
+* **Ruta:** `/acceso/:id`
+* **Descripción:** `Actualiza los datos del usuario.`
+
+* **Body (JSON):**
+
+```json
+{
+  "nombre": "Pedro Andrés",
+  "apellido": "Morales Soto",
+  "correo": "pedro.andres@example.com"
+}
+```
+
+* **Respuesta (200):**
+
+```json
+{
+  "message": "Usuario actualizado",
+  "usuario": {
+    "_id": "6502abc1234567890abcdef1",
+    "nombre": "Pedro Andrés",
+    "apellido": "Morales Soto",
+    "correo": "pedro.andres@example.com",
+    "rut": "12.345.678-9"
+  }
+}
+```
+
+### 6. Eliminar Acceso por ID
+
+* **Método:** `DELETE`
+* **Ruta:** ````
+* **Descripción:** `Elimina un usuario registrado en el sistema.`
+
+* **Ejemplo:**
+
+`/acceso/6502abc1234567890abcdef1`
+
+
+* **Respuesta (200):**
+
+```json
+{
+  "message": "Usuario eliminado",
+  "usuario": {
+    "_id": "6502abc1234567890abcdef1",
+    "nombre": "Pedro Andrés",
+    "apellido": "Morales Soto",
+    "correo": "pedro.andres@example.com",
+    "rut": "12.345.678-9"
+  }
+}
+```
 
 ### 🔹 Notas importantes
 

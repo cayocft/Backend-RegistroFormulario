@@ -133,3 +133,23 @@ exports.obtenerBicicletasPorEstablecimientoYFecha = async (req, res) => {
     res.status(500).json({ message: "Error interno del servidor." });
   }
 };
+
+//obtener bicicletas por rango de fechas
+ // Buscar por rango de fecha
+exports.obtenerPorRango = async (req, res) => {
+  try {
+    const { identificador, desde, hasta } = req.params;
+
+    const bicicletas = await bicicletaRepo.obtenerPorEstablecimientoYRango(
+      identificador,
+      desde,
+      hasta
+    );
+
+    return res.status(200).json(bicicletas);
+
+  } catch (error) {
+    console.error("Error al obtener bicicletas por rango:", error);
+    return res.status(500).json({ message: "Error en el servidor" });
+  }
+};
